@@ -24,6 +24,7 @@ public abstract class Personne {
 	}
 
 
+
 	/**
 	 * @return the nom
 	 */
@@ -95,5 +96,6 @@ public abstract class Personne {
 	}
 	
 	
+
 
 }

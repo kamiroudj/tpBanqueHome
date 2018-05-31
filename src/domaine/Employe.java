@@ -7,6 +7,7 @@ public class Employe extends Personne{
 	
 	
 
+
 	
 	public Employe() {
 		super();
@@ -19,6 +20,7 @@ public class Employe extends Personne{
 		this.login = login;
 		this.password = password;
 	}
+
 
 
 
