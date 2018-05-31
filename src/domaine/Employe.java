@@ -5,6 +5,23 @@ public class Employe extends Personne{
 	protected int login;
 	protected int password;
 	
+	
+	
+	
+	
+	
+	public Employe() {
+		super();
+	}
+
+
+	public Employe(int login, int password) {
+		super();
+		this.login = login;
+		this.password = password;
+	}
+	
+	
 	public int getLogin() {
 		return login;
 	}

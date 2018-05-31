@@ -7,5 +7,7 @@ public abstract class Personne {
 	protected String adresse ; 
 	protected String codePostal ; 
 	protected String ville ; 
+	
+	
 
 }
