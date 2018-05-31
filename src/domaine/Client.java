@@ -15,15 +15,18 @@ public class Client extends Personne {
 	
 	public Client() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+	
 
-	public Client(String nom, String prenom, String adresse, String codePostal, String ville, String typeClient) {
+	public Client(int idClient, String nom, String prenom, String adresse, String codePostal, String ville, String typeClient) {
 		super(nom, prenom, adresse, codePostal, ville);
 		this.typeClient = typeClient;
+		this.idClient = idClient;
 	}
 	
 	//-------- Getters & setters  ------------------------------
+	
+	
 	
 
 	/**

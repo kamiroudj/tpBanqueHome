@@ -6,224 +6,194 @@ import java.util.List;
 import domaine.CarteBancaire;
 import domaine.Client;
 import domaine.Compte;
+import domaine.CompteCourant;
+import domaine.CompteEpargne;
 import domaine.Conseiller;
 
 public class ServiceImpl implements Iservice {
-	
 
-	private List <Compte> comptes = new ArrayList <Compte> () ; 
-	private List <Client> clients = new ArrayList <Client> () ;
-	private List <Conseiller> conseillers = new ArrayList <Conseiller>() ;
-	private List <CarteBancaire> cartes = new ArrayList <CarteBancaire> () ;
-	
-	//--------  Getters & Setters 
-	
-	/**
-	 * @return the comptes
-	 */
-	public List<Compte> getComptes() {
-		return comptes;
-	}
+	private List<Compte> comptes = new ArrayList<Compte>();
+	private List<Client> clients = new ArrayList<Client>();
+	private List<Conseiller> conseillers = new ArrayList<Conseiller>();
+	private List<CarteBancaire> cartes = new ArrayList<CarteBancaire>();
 
-	/**
-	 * @param comptes the comptes to set
-	 */
-	public void setComptes(List<Compte> comptes) {
-		this.comptes = comptes;
-	}
-
-	/**
-	 * @return the clients
-	 */
-	public List<Client> getClients() {
-		return clients;
-	}
-
-	/**
-	 * @param clients the clients to set
-	 */
-	public void setClients(List<Client> clients) {
-		this.clients = clients;
-	}
-	
-	
-
-
-	
-	/**
-	 * @return the conseillers
-	 */
-	public List<Conseiller> getConseillers() {
-		return conseillers;
-	}
-
-	/**
-	 * @param conseillers the conseillers to set
-	 */
-	public void setConseillers(List<Conseiller> conseillers) {
-		this.conseillers = conseillers;
-	}
-
-	/**
-	 * @return the cartes
-	 */
-	public List<CarteBancaire> getCartes() {
-		return cartes;
-	}
-
-	/**
-	 * @param cartes the cartes to set
-	 */
-	public void setCartes(List<CarteBancaire> cartes) {
-		this.cartes = cartes;
-	}
-	
-	// ------------  Autres methodes -----------------
-
+	// ------------ methodes CRUD-----------------
 
 	@Override
 	public void creerCompte(Compte compte) {
-		// TODO Auto-generated method stub
-		comptes.add(compte) ;
-		 
-		
-	}
 
-	
+		comptes.add(compte);
+	}
 
 	@Override
 	public Compte lireCompte(int idCompte) {
-		// TODO Auto-generated method stub
-		return comptes.get(idCompte) ;
-		
+
+		return comptes.get(idCompte);
+
 	}
 
 	@Override
 	public void modifierCompte(Compte compte) {
-		int index = compte.getIdCompte() ;
+		int index = compte.getIdCompte();
 		comptes.set(index, compte);
 	}
 
 	@Override
 	public void supprimerCompte(Compte compte) {
-		// TODO Auto-generated method stub
-		comptes.remove(compte) ;
+
+		comptes.remove(compte);
 	}
 
 	@Override
 	public List<Compte> listerComptes() {
-		// TODO Auto-generated method stub
+
 		return comptes;
-	}
-
-	@Override
-	public void crediterCompte(Compte compte, double montant) {
-		// TODO Auto-generated method stub
-		double solde = compte.getSolde() ;
-		compte.setSolde(solde + montant);
-		
-	}
-
-	@Override
-	public void debiterCompte(Compte compte, double montant) {
-		// TODO Auto-generated method stub
-		double solde = compte.getSolde();
-		compte.setSolde(solde - montant);
-		
-	}
-
-	@Override
-	public void ajouterTitulaire(Compte compte, Client client) {
-		// TODO Auto-generated method stub
-		compte.setClient(client);
-		client.getComptes().add(compte) ;
-		
 	}
 
 	@Override
 	public void creerClient(Client client) {
 
-		// TODO Auto-generated method stub
-		clients.add(client) ;
+		clients.add(client);
 	}
 
 	@Override
 	public Client lireClient(int idClient) {
-		// TODO Auto-generated method stub
-		return clients.get(idClient) ;
+		return clients.get(idClient);
 	}
 
 	@Override
 	public void modifierClient(Client client) {
-		// TODO Auto-generated method stub
-		clients.set(client.getIdClient(), client) ;
-		
+		clients.set(client.getIdClient(), client);
+
 	}
 
 	@Override
 	public void supprimerClient(Client client) {
-		// TODO Auto-generated method stub
-		clients.remove(client) ;
-		
+		clients.remove(client);
+
 	}
 
 	@Override
 	public List<Client> listerClients() {
-		// TODO Auto-generated method stub
-		return clients ; 
-	}
-
-	
-
-	@Override
-	public void attribuerConseiller(Client client, Conseiller conseiller) {
-		// TODO Auto-generated method stub
-		client.setConseiller(conseiller);
-		conseiller.getClients().add(client) ;
-	}
-
-	@Override
-	public void attribuerCarte(Client client, CarteBancaire carte) {
-		// TODO Auto-generated method stub
-		client.setCarte(carte);
-		carte.setProprietaire(client);
-		
+		return clients;
 	}
 
 	@Override
 	public void creerCarte(CarteBancaire carte) {
-		// TODO Auto-generated method stub
-		cartes.add(carte) ;
-		
+		cartes.add(carte);
 	}
 
 	@Override
 	public CarteBancaire lireCarteBancaire() {
 		// TODO Auto-generated method stub
-		return null ; 
-		
+		return null;
+
 	}
 
 	@Override
 	public void modifierCarteBancaire(CarteBancaire carte) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void supprimerCarteBancaire(CarteBancaire carte) {
-		// TODO Auto-generated method stub
-		cartes.remove(carte) ;
-		
+		cartes.remove(carte);
+
+	}
+
+	/**************************************
+	 * Fonctionnalités métiers
+	 ************************************************************/
+
+	@Override
+	public void crediterCompte(Compte compte, double montant) {
+
+		double solde = compte.getSolde();
+		compte.setSolde(solde + montant);
+
+	}
+
+	@Override
+	public void debiterCompte(Compte compte, double montant) {
+
+		double solde = compte.getSolde();
+		compte.setSolde(solde - montant);
+
+	}
+
+	@Override
+	public void ajouterTitulaire(Compte compte, Client client) {
+
+		compte.setClient(client);
+		client.getComptes().add(compte);
+
+	}
+
+	@Override
+	public void attribuerConseiller(Client client, Conseiller conseiller) {
+		client.setConseiller(conseiller);
+		conseiller.getClients().add(client);
+	}
+
+	@Override
+	public void attribuerCarte(Client client, CarteBancaire carte) {
+		client.setCarte(carte);
+		carte.setProprietaire(client);
+
 	}
 
 	@Override
 	public void eliminerClientduSysteme(Client client) {
-		// TODO Auto-generated method stub
-		cartes.remove(client.getCarte()) ;
-		comptes.removeAll(client.getComptes()) ;
-		clients.remove(client) ;
-		
+		cartes.remove(client.getCarte());
+		comptes.removeAll(client.getComptes());
+		clients.remove(client);
+	}
+
+	@Override
+	public void effectuerVirement(Compte compteDebiteur, Compte compteCrediteur, double montant) {
+		double soldeD = compteDebiteur.getSolde();
+		double soldeC = compteCrediteur.getSolde();
+
+		if (compteDebiteur instanceof CompteEpargne) {
+
+			if (montant <= soldeD) {
+
+				compteDebiteur.setSolde(soldeD - montant);
+				compteCrediteur.setSolde(soldeC + montant);
+			}
+		} else {
+			
+			double decouvert = ((CompteCourant)compteDebiteur).getDecouvert();
+			
+			if (montant <= soldeD + decouvert) {
+				compteDebiteur.setSolde(soldeD - montant);
+				compteCrediteur.setSolde(soldeC + montant);
+			}
+			
+		}
+
+	}
+	
+	@Override
+	public void effectuerVirement(Compte compteDebiteur, double montant) {
+		double soldeD = compteDebiteur.getSolde();
+		if (compteDebiteur instanceof CompteEpargne) {
+
+			if (montant <= soldeD) {
+
+				compteDebiteur.setSolde(soldeD - montant);
+			}
+		} else {
+			
+			double decouvert = ((CompteCourant)compteDebiteur).getDecouvert();
+			
+			if (montant <= soldeD + decouvert) {
+				compteDebiteur.setSolde(soldeD - montant);
+			}
+			
+		}
+
 	}
 
 }

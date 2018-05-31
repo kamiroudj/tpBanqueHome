@@ -2,14 +2,21 @@ package domaine;
 
 public class CompteCourant extends Compte {
 	
-	private double decouvert ;
+	private double decouvert =1000;
 
 	//----------   Constructeurs ----------
 	
 	public CompteCourant() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	public CompteCourant(int idCompte) {
+		super(idCompte);
+	}
+
+
 
 	public CompteCourant(int idCompte, double solde, String dateOuverture, double decouvert) {
 		super(idCompte, solde, dateOuverture);

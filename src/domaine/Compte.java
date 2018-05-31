@@ -11,8 +11,16 @@ public abstract class Compte {
 	
 	public Compte() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	public Compte(int idCompte) {
+		super();
+		this.idCompte = idCompte;
+	}
+
+
 
 	public Compte(int idCompte, double solde, String dateOuverture) {
 		super();

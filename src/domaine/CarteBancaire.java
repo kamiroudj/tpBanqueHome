@@ -11,8 +11,16 @@ public abstract class CarteBancaire {
 	
 	public CarteBancaire() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	public CarteBancaire(int idCarte) {
+		super();
+		this.idCarte = idCarte;
+	}
+
+
 
 	public CarteBancaire(int idCarte, int codeCarte, String dateExpiration) {
 		super();

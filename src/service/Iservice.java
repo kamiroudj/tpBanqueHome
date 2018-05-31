@@ -18,9 +18,6 @@ public interface Iservice {
 	public void modifierCompte (Compte compte) ;
 	public void supprimerCompte (Compte compte);
 	public List <Compte> listerComptes () ;
-	public void crediterCompte (Compte compte, double montant) ;
-	public void debiterCompte (Compte compte, double montant) ;
-	public void ajouterTitulaire(Compte compte, Client client) ;
 	
 	// ---------  CRUD Client ---------
 	
@@ -29,8 +26,7 @@ public interface Iservice {
 	public void modifierClient (Client client) ;
 	public void supprimerClient (Client client) ;
 	public List<Client> listerClients () ;
-	public void attribuerConseiller(Client client, Conseiller conseiller) ;
-	public void attribuerCarte(Client client, CarteBancaire carte) ;
+
 	
 	// ---------  CRUD CarteBancaire ---------
 	
@@ -38,8 +34,17 @@ public interface Iservice {
 	public CarteBancaire lireCarteBancaire () ;
 	public void modifierCarteBancaire (CarteBancaire carte) ;
 	public void supprimerCarteBancaire (CarteBancaire carte) ;
-	
+		
+	// -------------------Fonctionnalités métiers ------------------//
+	public void crediterCompte (Compte compte, double montant) ;
+	public void debiterCompte (Compte compte, double montant) ;
+	public void ajouterTitulaire(Compte compte, Client client) ;
 	public void eliminerClientduSysteme(Client client) ;
+	public void attribuerConseiller(Client client, Conseiller conseiller) ;
+	public void attribuerCarte(Client client, CarteBancaire carte) ;
+	public void effectuerVirement(Compte compteDebiteur, Compte compteCrediteur, double montant);
+	public void effectuerVirement(Compte compteDebiteur, double montant);
+	
 	
 	
 	

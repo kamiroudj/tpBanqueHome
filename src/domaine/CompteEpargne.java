@@ -2,14 +2,21 @@ package domaine;
 
 public class CompteEpargne extends Compte {
 	
-	private double taux ;
+	private double taux = 3 ;
 	
 	//----------   Constructeurs ----------
 
 	public CompteEpargne() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
+	
+	
+
+	public CompteEpargne(int idCompte) {
+		super(idCompte);
+	}
+
+
 
 	public CompteEpargne(int idCompte, double solde, String dateOuverture, double taux) {
 		super(idCompte, solde, dateOuverture);
