@@ -5,6 +5,7 @@ public abstract class CarteBancaire {
 	private int idCarte ; 
 	private int codeCarte ; 
 	private String dateExpiration ;
+	private Client proprietaire ; 
 	
 	//----------   Constructeurs ----------
 	
@@ -22,11 +23,26 @@ public abstract class CarteBancaire {
 	
 	//----------   Getters & Setters ----------
 
+	
 	/**
 	 * @return the idCarte
 	 */
 	public int getIdCarte() {
 		return idCarte;
+	}
+
+	/**
+	 * @return the proprietaire
+	 */
+	public Client getProprietaire() {
+		return proprietaire;
+	}
+
+	/**
+	 * @param proprietaire the proprietaire to set
+	 */
+	public void setProprietaire(Client proprietaire) {
+		this.proprietaire = proprietaire;
 	}
 
 	/**
