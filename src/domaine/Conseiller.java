@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Conseiller extends Employe{
 	
+
 	List<Personne> clients = new ArrayList<Personne>(); ;
 	
 	public Conseiller() {
@@ -15,6 +16,7 @@ public class Conseiller extends Employe{
 
 	public Conseiller(String nom, String prenom, String adresse, String codePostal, String ville, int login,
 			int password) {
+
 		super(nom, prenom, adresse, codePostal, ville, login, password);
 	}
 

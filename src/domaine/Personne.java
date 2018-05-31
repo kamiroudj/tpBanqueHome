@@ -2,6 +2,7 @@ package domaine;
 
 public abstract class Personne {
 
+
 	protected String nom;
 	protected String prenom;
 	protected String adresse;
@@ -21,6 +22,7 @@ public abstract class Personne {
 		this.codePostal = codePostal;
 		this.ville = ville;
 	}
+
 
 	/**
 	 * @return the nom

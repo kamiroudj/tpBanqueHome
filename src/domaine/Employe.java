@@ -6,6 +6,7 @@ public class Employe extends Personne{
 	protected int password;
 	
 	
+
 	
 	public Employe() {
 		super();
@@ -18,6 +19,7 @@ public class Employe extends Personne{
 		this.login = login;
 		this.password = password;
 	}
+
 
 
 	public int getLogin() {
