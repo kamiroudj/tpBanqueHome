@@ -6,17 +6,15 @@ public class Employe extends Personne{
 	protected int password;
 	
 	
-	
-	
-	
+
 	
 	public Employe() {
 		super();
 	}
 
 
-	public Employe(int login, int password) {
-		super();
+	public Employe(String nom, String prenom, String adresse, String codePostal, String ville, int login, int password) {		
+		super(nom, prenom, adresse, codePostal, ville);
 		this.login = login;
 		this.password = password;
 	}

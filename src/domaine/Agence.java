@@ -10,6 +10,20 @@ public class Agence {
 	private Employe gerant;
 	
 	
+	
+	
+	public Agence() {
+		super();
+	}
+	
+	
+	public Agence(String idAgence, Date dateCreation) {
+		super();
+		this.idAgence = idAgence;
+		this.dateCreation = dateCreation;
+	}
+	
+	
 	public String getIdAgence() {
 		return idAgence;
 	}
