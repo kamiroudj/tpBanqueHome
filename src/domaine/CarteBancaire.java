@@ -4,6 +4,68 @@ public abstract class CarteBancaire {
 	
 	private int idCarte ; 
 	private int codeCarte ; 
-	private String dateExpiration ; 
+	private String dateExpiration ;
+	
+	//----------   Constructeurs ----------
+	
+	public CarteBancaire() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public CarteBancaire(int idCarte, int codeCarte, String dateExpiration) {
+		super();
+		this.idCarte = idCarte;
+		this.codeCarte = codeCarte;
+		this.dateExpiration = dateExpiration;
+	}
+	
+	//----------   Getters & Setters ----------
+
+	/**
+	 * @return the idCarte
+	 */
+	public int getIdCarte() {
+		return idCarte;
+	}
+
+	/**
+	 * @param idCarte the idCarte to set
+	 */
+	public void setIdCarte(int idCarte) {
+		this.idCarte = idCarte;
+	}
+
+	/**
+	 * @return the codeCarte
+	 */
+	public int getCodeCarte() {
+		return codeCarte;
+	}
+
+	/**
+	 * @param codeCarte the codeCarte to set
+	 */
+	public void setCodeCarte(int codeCarte) {
+		this.codeCarte = codeCarte;
+	}
+
+	/**
+	 * @return the dateExpiration
+	 */
+	public String getDateExpiration() {
+		return dateExpiration;
+	}
+
+	/**
+	 * @param dateExpiration the dateExpiration to set
+	 */
+	public void setDateExpiration(String dateExpiration) {
+		this.dateExpiration = dateExpiration;
+	} 
+	
+	
+	
+	
 
 }
