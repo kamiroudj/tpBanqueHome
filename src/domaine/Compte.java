@@ -63,6 +63,20 @@ public abstract class Compte {
 	 */
 	public void setDateOuverture(String dateOuverture) {
 		this.dateOuverture = dateOuverture;
+	}
+
+	/**
+	 * @return the client
+	 */
+	public Client getClient() {
+		return client;
+	}
+
+	/**
+	 * @param client the client to set
+	 */
+	public void setClient(Client client) {
+		this.client = client;
 	} 
 	
 	// 
